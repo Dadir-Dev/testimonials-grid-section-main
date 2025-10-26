@@ -260,7 +260,7 @@ body {
   }
 
   .testimonial {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .author img {
@@ -336,13 +336,13 @@ body {
 @media (min-width: 1440px) {
   .testimonial-grid {
     max-width: 1400px;
-    gap: 1.8rem;
-    padding: 10rem 4rem 0;
+    gap: 1.5rem;
+    padding: 12rem 6rem 0;
     margin-top: 2rem;
   }
 
   .testimonial {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .testimonial-grid .daniel-clifford::before {
