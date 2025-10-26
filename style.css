@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,10 +18,16 @@
   --dark-blue: hsl(219, 29%, 14%);
   --purple-light: hsl(260, 100%, 95%);
   --purple-blue: hsl(264, 82%, 80%);
+
+  /* Spacing  */
+  --spacing-sm: clamp(0.25rem, 0.25rem + 0.5vw, 0.75rem);
+  --spacing-md: clamp(1rem, 0.5rem + 1vw, 1.5rem);
+  --spacing-lg: clamp(1.5rem, 0.75rem + 1.5vw, 3rem);
+  --spacing-xl: clamp(2rem, 1rem + 2vw, 4rem);
+  --spacing-2xl: clamp(3rem, 1.5rem + 3vw, 6rem);
 }
 
-/* Base Layout - Mobile Design */
-
+/* Base Layout - Mobile-First Design */
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
   background-color: var(--grey-light);
@@ -30,47 +37,78 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 1rem;
 }
 
 .testimonial-grid {
   display: grid;
-  gap: 2rem;
-  place-content: center;
+  gap: 1.5rem;
+  width: 100%;
   max-width: 1200px;
-  padding: 5rem 1.5rem 0;
+  margin: 0 auto;
 }
 
 .testimonial {
   border-radius: 10px;
-  box-shadow: 30px 30px 20px rgba(0, 0, 0, 0.2);
-  padding: 1rem;
-  line-height: 1.5;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  line-height: 1.4;
+  position: relative;
+  overflow: hidden;
 }
 
 .testimonial .author {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  align-items: center;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .author .name {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
 .author img {
-  width: 45px;
-  height: 45px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
+.author .status {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.testimonial .summary {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial .quote {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  line-height: 1.4;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual testimonial styles */
 .testimonial-grid .daniel-clifford {
   background-color: var(--purple);
   color: var(--white);
+  position: relative;
 }
 
 .testimonial-grid :is(.daniel-clifford img, .patrick-abrams img) {
-  border: 3px solid var(--purple-blue);
+  border: 2px solid var(--purple-blue);
 }
 
 .testimonial-grid .jonathan-walters {
@@ -81,6 +119,7 @@ body {
 .testimonial-grid .jeanette-harmon {
   background-color: var(--white);
   color: var(--grey-blue);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 .testimonial-grid .patrick-abrams {
@@ -91,72 +130,234 @@ body {
 .testimonial-grid .kira-whittle {
   background-color: var(--white);
   color: var(--grey-blue);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
 }
 
-.author .status {
-  font-size: 0.9rem;
+/* ============= */
+/* Modern Footer */
+/* ============= */
+.footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-lg);
+  width: 100%;
+  box-shadow: 0 clamp(0.25rem, 0.2rem + 0.25vw, 0.375rem)
+    clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem) rgba(0, 0, 0, 0.1);
+  margin-top: var(--spacing-2xl);
 }
 
-.testimonial .summary {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-}
-
-.testimonial .quote {
-  margin-top: 1rem;
-  font-size: 13px;
-}
-
-.attribution {
-  font-size: 0.9rem;
-  color: var(--grey-dark);
-  margin: 2rem 0;
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+  gap: var(--spacing-md);
+  flex-direction: column;
   text-align: center;
 }
 
-.attribution a {
-  color: var(--dark-blue);
+.developer-info {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.dev-name {
+  font-size: clamp(1.5rem, 0.5rem + 1.5vw, 2rem);
+  font-weight: 600;
+  color: #ecf0f1;
+}
+.dev-title {
+  color: #bdc3c7;
+  font-size: clamp(1.125rem, 0.5rem + 1.5vw, 1.5rem);
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: white;
   text-decoration: none;
-  font-weight: 700;
-}
-
-.attribution a:hover {
-  background-color: var(--dark-blue);
-  color: var(--white);
-  padding: 0.1rem 0.1rem;
-  border-radius: 5px;
+  font-weight: 500;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
-/* Desktop Design */
+.github-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 clamp(0.25rem, 0.2rem + 0.25vw, 0.375rem)
+    clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem) rgba(0, 0, 0, 0.3);
+}
 
-@media (min-width: 768px) {
-  body {
-    background-color: var(--grey-light);
+.github-icon {
+  width: var(--spacing-md);
+  height: var(--spacing-md);
+  fill: white;
+}
+
+.footer-bottom {
+  margin-top: 0.9rem;
+  color: #95a5a6;
+  font-size: clamp(1.125rem, 0.5rem + 1.5vw, 1.5rem);
+  text-align: center;
+}
+
+/* ================= */
+/* RESPONSIVE DESIGN */
+/* ================= */
+
+/* Tablet: 576px and up */
+@media (min-width: 576px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1.5rem 0;
   }
+
+  .testimonial {
+    padding: 1.75rem;
+  }
+
+  .author img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .author .name {
+    font-size: 1rem;
+  }
+
+  .testimonial .summary {
+    font-size: 1.2rem;
+  }
+
+  .testimonial .quote {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large Tablet: 768px and up */
+@media (min-width: 768px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .testimonial-grid .daniel-clifford::before {
+    right: 20%;
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 3rem 2rem 0;
+  }
+
+  .testimonial {
+    padding: 2rem;
+  }
+
+  .author img {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Large Desktop: 1200px and up - FINAL LAYOUT */
+@media (min-width: 1200px) {
   .testimonial-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-rows: repeat(2, auto);
+    gap: 1.75rem;
+    padding: 4rem 2rem 0;
   }
-  .testimonial {
-    padding: 1rem 5%;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-  }
+
+  /* Daniel Clifford - top left, spans 2 columns */
   .testimonial-grid .daniel-clifford {
-    background-image: url(images/bg-pattern-quotation.svg);
-    background-repeat: no-repeat;
-    background-position: top right 20%;
-    grid-area: 1/1/2/3;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
   }
 
-  .testimonial-grid .kira-whittle {
-    grid-area: 1/4/3/5;
+  /* Jonathan Walters - top right */
+  .testimonial-grid .jonathan-walters {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
   }
 
+  /* Jeanette Harmon - middle left */
+  .testimonial-grid .jeanette-harmon {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  /* Patrick Abrams - middle, spans 2 columns */
   .testimonial-grid .patrick-abrams {
-    grid-area: 2/2/3/4;
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
   }
+
+  /* Kira Whittle - right side, spans 2 rows */
+  .testimonial-grid .kira-whittle {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+  }
+
+  .testimonial-grid .daniel-clifford::before {
+    right: 80px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .author img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .author .name {
+    font-size: 1.1rem;
+  }
+
   .testimonial .summary {
-    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .testimonial .quote {
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1440px) {
+  .testimonial-grid {
+    max-width: 1400px;
+    gap: 1.8rem;
+  }
+
+  .testimonial {
+    padding: 2rem;
+  }
+
+  .testimonial-grid .daniel-clifford::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 15%;
+    width: 120px;
+    height: 120px;
+    background-image: url("images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.7;
+    z-index: 1;
+  }
+
+  .testimonial .summary {
+    font-size: 1.4rem;
   }
 }
