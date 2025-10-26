@@ -1,6 +1,6 @@
 # Frontend Mentor - Testimonials grid section solution
 
-This is a solution to the [Testimonials grid section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Testimonials grid section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7). Frontend Mentor challenges help me improve my coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -12,10 +12,9 @@ This is a solution to the [Testimonials grid section challenge on Frontend Mento
     - [Screenshot](#screenshot)
     - [Links](#links)
   - [My process](#my-process)
-    - [Built with](#built-with)
+    - [🔧 Built With](#-built-with)
     - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-    - [Useful resources](#useful-resources)
+  - [Continued Development](#continued-development)
   - [Author](#author)
   - [Acknowledgments](#acknowledgments)
 
@@ -85,72 +84,61 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Testimonials grid section](https://github.com/Dadir-Dev/testimonials-grid-section-main)
-- Live Demo URL: [Testimonials grid section]()
+- Live Demo URL: [Testimonials grid section](https://dadir-dev.github.io/testimonials-grid-section-main/)
 
 ## My process
 
-### Built with
+### 🔧 Built With
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Semantic **HTML5**
+- **CSS Grid**
+- **Responsive design**
+- **VS Code** and **Live Server**
+- **Git + GitHub**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+Here’s a small snippet I’m proud of 👇:
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.daniel-clifford {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+.jonathan-walters {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+.jeanette-harmon {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.patrick-abrams {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+.kira-whittle {
+  grid-column: 4 / 5;
+  grid-row: 1 / 3;
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
+## Continued Development
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+In the future, I want to:
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- Add smooth animations to each grid item
 
-### Continued development
+- Explore using CSS variables for better maintainability
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- Recreate this layout using a CSS framework like Tailwind CSS
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [Dadir-Dev](https://www.frontendmentor.io/profile/Dadir-Dev)
+- GitHub - [Dadir-Dev](https://github.com/Dadir-Dev)
+- LinkedIn - [Abdikadir Mohammed](https://www.linkedin.com/in/abdikadir-mohammed-54717318b/)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thanks to Frontend Mentor for the great design and to the developer community for inspiration and feedback.
